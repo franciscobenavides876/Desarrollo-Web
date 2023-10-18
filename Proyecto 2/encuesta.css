@@ -1,0 +1,96 @@
+/* Estilos para el cuerpo del formulario */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Estilos para el encabezado */
+h1 {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+}
+
+/* Estilos para el contenedor principal del formulario */
+form {
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para las etiquetas de los campos */
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Estilos para los campos de entrada de texto */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para los botones de opción (radio y checkbox) */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Estilos para los botones de opción (radio y checkbox) junto a las etiquetas */
+label[for="masculino"],
+label[for="femenino"],
+label[for="otro"],
+label[for="no-declarar"],
+label[for="habilidades-tecnicas"],
+label[for="desarrollo-profesional"],
+label[for="cursos-en-linea"],
+label[for="talleres-presenciales"] {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Estilos para los contenedores de grupos de campos */
+.info,
+.box_1,
+.box_2,
+.box_3,
+.box_4 {
+    margin-bottom: 20px;
+}
+
+/* Estilos para el botón de enviar */
+input[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para el cuadro de comentarios */
+textarea {
+    resize: vertical;
+}
+
+/* Estilos para el cuadro de selección */
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
