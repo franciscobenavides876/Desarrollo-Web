@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+  }
+
+  .tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+  }
+
+  .tab-button:focus {
+    outline: none;
+  }
+
+  .active {
+    background-color: #ccc;
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .active-content {
+    display: block;
+  }
+</style>
+</head>
+<body>
+<div class="login-container">
+  <button class="tab-button active" onclick="changeTab('loginTab')">Iniciar sesión</button>
+  <button class="tab-button" onclick="changeTab('signupTab')">Registrarse</button>
+
+  <div class="tab-content active-content" id="loginTab">
+    <h2>Iniciar sesión</h2>
+    <form>
+      <label for="username">Usuario:</label>
+      <input type="text" id="username" name="username" required><br>
+
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" required><br>
+
+      <button type="submit">Iniciar sesión</button>
+    </form>
+  </div>
+
+  <div class="tab-content" id="signupTab">
+    <h2>Registrarse</h2>
+    <form>
+      <label for="newUsername">Usuario:</label>
+      <input type="text" id="newUsername" name="newUsername" required><br>
+
+      <label for="newPassword">Contraseña:</label>
+      <input type="password" id="newPassword" name="newPassword" required><br>
+
+      <button type="submit">Registrarse</button>
+    </form>
+  </div>
+</div>
+
+<script>
+function changeTab(tabId) {
+  const tabs = document.querySelectorAll('.tab-content');
+  const buttons = document.querySelectorAll('.tab-button');
+
+  tabs.forEach(tab => tab.classList.remove('active-content'));
+  buttons.forEach(button => button.classList.remove('active'));
+
+  const selectedTab = document.getElementById(tabId);
+  selectedTab.classList.add('active-content');
+  const selectedButton = Array.from(buttons).find(button => button.id === tabId + 'Button');
+  selectedButton.classList.add('active');
+}
+</script>
+</body>
+</html>
