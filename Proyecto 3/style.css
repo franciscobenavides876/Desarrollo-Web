@@ -1,0 +1,375 @@
+.navbar a {
+    text-decoration: none;
+    color: #f2f4f8;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 0.7rem;
+}
+
+.navbar a:hover {
+    font-weight: bolder;
+}
+
+.nav-container {
+display: block;
+position: relative;
+height: 60px;
+}
+
+.nav-container .checkbox {
+position: absolute;
+display: block;
+height: 32px;
+width: 32px;
+top: 20px;
+left: 20px;
+z-index: 5;
+opacity: 0;
+cursor: pointer;
+}
+
+.nav-container .hamburger-lines {
+display: block;
+height: 16px;
+width: 22px;
+position: absolute;
+top: 20px;
+left: 20px;
+z-index: 2;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.nav-container .hamburger-lines .line {
+display: block;
+height: 2px;
+width: 100%;
+border-radius: 10px;
+background: #dde1e6;
+}
+
+.nav-container .hamburger-lines .line1 {
+transform-origin: 0% 0%;
+transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+transform-origin: 0% 100%;
+transition: transform 0.4s ease-in-out;
+}
+
+.navbar .menu-items {
+background-color: #232323;
+padding-top: 120px;
+box-shadow: inset 0 0 2000px none;
+height: 100vh;
+width: 200px;
+transform: translate(-150%);
+display: flex;
+flex-direction: column;
+margin-left: -40px;
+padding-left: 50px;
+transition: transform 0.5s ease-in-out;
+text-align: center;
+}
+
+.navbar .menu-items li {
+margin-bottom: 1.2rem;
+font-size: 1.5rem;
+font-weight: 500;
+}
+
+.nav-container input[type=checkbox]:checked ~ .menu-items {
+transform: translateX(0);
+}
+
+.nav-container input[type=checkbox]:checked ~ .hamburger-lines .line1 {
+transform: rotate(42deg);
+}
+
+.nav-container input[type=checkbox]:checked ~ .hamburger-lines .line2 {
+transform: scaleY(0);
+}
+
+.nav-container input[type=checkbox]:checked ~ .hamburger-lines .line3 {
+transform: rotate(-42deg);
+}
+
+.homePage {
+    color: #dde1e6;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.homePage .FusionSabor {
+font-size: 50px;
+margin: 20px;
+}
+.homePage > p {
+font-size: 20px;
+margin: 10px;
+}
+.homePage > p:first-of-type {
+font-style: italic;
+}
+.homePage > p:last-of-type {
+font-weight: bold;
+}
+
+.FusionSabor {
+color: #dde1e6;
+font-size: 24px;
+font-family: system-ui;
+font-weight: bold;
+margin: auto 20px;
+}
+
+.page {
+padding: 200px;
+}
+
+.row1 {
+display: flex;
+flex-direction: row;
+}
+
+.tarjeta1 {
+border-radius: 10px;
+background-color: #dde1e6;
+border: unset;
+margin: 50px;
+}
+.tarjeta1 .content-container {
+display: flex;
+flex-direction: column;
+}
+.tarjeta1 .content-container .imgTarjeta {
+border-radius: 10px 10px 0 0;
+max-height: 350px;
+}
+.tarjeta1 .content-container .content {
+margin: 20px;
+color: #393939;
+}
+.tarjeta1 .content-container .content h2 {
+font-size: 20px;
+}
+.tarjeta1 .content-container .content p {
+text-justify: distribute;
+display: inline-block;
+width: 100%;
+}
+
+.tarjeta2 {
+border-radius: 10px;
+background-color: #dde1e6;
+border: unset;
+margin: 50px;
+}
+.tarjeta2 .content-container {
+display: flex;
+flex-direction: column;
+}
+.tarjeta2 .content-container .imgTarjeta {
+border-radius: 10px 10px 0 0;
+width: 350px;
+}
+.tarjeta2 .content-container .content {
+margin: 20px;
+color: #393939;
+}
+.tarjeta2 .content-container .content h2 {
+font-size: 20px;
+}
+.tarjeta2 .content-container .content p {
+text-justify: distribute;
+}
+.tarjeta2 .content-container .content ul {
+padding: 0 100px;
+}
+.tarjeta2 .content-container .content ul li {
+list-style-type: circle;
+list-style-position: outside;
+}
+
+.page{
+color:white;
+}
+
+/* Estilo para ocultar submenús por defecto */
+ul.submenu {
+display: none;
+}
+
+/* Estilo para mostrar submenús cuando el menú se activa */
+.nav-container:hover ul.submenu {
+display: block;
+}
+
+.team-container h1{
+text-align: center;
+}
+
+.team-member img{
+width: 350px;
+height: 350px;
+
+}
+
+.team-member{
+padding: 50px;
+}
+
+.services-container h1{
+text-align: center;
+}
+
+.birthday{
+padding: 60px;
+}
+
+.wedding img{
+width: 800px;
+height: 500px;
+}
+
+.services-container{
+padding: 50px;
+position: none;
+}
+
+
+.history-container h1{
+text-align: center;
+padding: 20px;
+}
+
+.blog-header {
+line-height: 1;
+border-bottom: 1px solid #e5e5e5;
+}
+
+.blog-header-logo {
+font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+font-size: 2.25rem;
+}
+
+.blog-header-logo:hover {
+text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+.display-4 {
+font-size: 2.5rem;
+}
+@media (min-width: 768px) {
+.display-4 {
+    font-size: 3rem;
+}
+}
+
+.nav-scroller {
+position: relative;
+z-index: 2;
+height: 2.75rem;
+overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+display: -ms-flexbox;
+display: flex;
+-ms-flex-wrap: nowrap;
+flex-wrap: nowrap;
+padding-bottom: 1rem;
+margin-top: -1px;
+overflow-x: auto;
+text-align: center;
+white-space: nowrap;
+-webkit-overflow-scrolling: touch;
+}
+
+.nav-scroller .nav-link {
+padding-top: .75rem;
+padding-bottom: .75rem;
+font-size: .875rem;
+}
+
+.card-img-right {
+height: 100%;
+border-radius: 0 3px 3px 0;
+}
+
+.flex-auto {
+-ms-flex: 0 0 auto;
+flex: 0 0 auto;
+}
+
+.h-250 { height: 250px; }
+@media (min-width: 768px) {
+.h-md-250 { height: 250px; }
+}
+
+/*
+* Blog name and description
+*/
+.blog-title {
+margin-bottom: 0;
+font-size: 2rem;
+font-weight: 400;
+}
+.blog-description {
+font-size: 1.1rem;
+color: #999;
+}
+
+@media (min-width: 40em) {
+.blog-title {
+    font-size: 3.5rem;
+}
+}
+
+/* Pagination */
+.blog-pagination {
+margin-bottom: 4rem;
+}
+.blog-pagination > .btn {
+border-radius: 2rem;
+}
+
+/*
+* Blog posts
+*/
+.blog-post {
+margin-bottom: 4rem;
+}
+.blog-post-title {
+margin-bottom: .25rem;
+font-size: 2.5rem;
+}
+.blog-post-meta {
+margin-bottom: 1.25rem;
+color: #999;
+}
+
+/*
+* Footer
+*/
+.blog-footer {
+padding: 2.5rem 0;
+color: #999;
+text-align: center;
+background-color: #f9f9f9;
+border-top: .05rem solid #e5e5e5;
+}
+.blog-footer p:last-child {
+margin-bottom: 0;
+}
