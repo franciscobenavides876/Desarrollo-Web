@@ -1,21 +1,22 @@
 <?php
 include 'conex.inc.php';
+$mensaje = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $correo = $_POST['correo'];
     $contrasena = $_POST['contrasena'];
     $sql = "SELECT ID_Cliente, Correo_Electronico, Contrasena, Nombre FROM clientes WHERE Correo_Cliente = '$correo' AND Contrasena = '$contrasena'";
-    $result = $conexion->query($sql);
+    $result = $conn->query($sql);
 
     if ($result === false) {
-        die("Error en la consulta SQL: " . $conexion->error);
+        die("Error en la consulta SQL: " . $conn->error);
     }
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $contrasena_db = $row['contrasena'];
+        $contrasena_db = $row['Contrasena']; // Corrected the column name
         $nombre = $row["Nombre"];
-        $ID_cliente = $row["ID_cliente"];
+        $ID_cliente = $row["ID_Cliente"]; // Corrected the column name
         if ($contrasena == $contrasena_db) {
             $mensaje = "Inicio de sesión exitoso. ¡Bienvenido!";
             session_start();
@@ -33,8 +34,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$conexion->close();
+$conn->close();
 ?>
+
 
 <?php
 
@@ -83,7 +85,7 @@ $conn->close();
             </div>
             <div class="Buttons">
                 <button type="submit" onclick="RedirigirMenu()">Listo</button>
-                <?php echo $mensaje;  ?>
+                <?php echo $mensaje;?>
             </div>
         </form>
     </div>
