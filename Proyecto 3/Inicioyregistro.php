@@ -1,11 +1,10 @@
 <?php
-//Conección a la base de datos
 include 'conex.inc.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $correo = $_POST['correo'];
     $contrasena = $_POST['contrasena'];
-    $sql = "SELECT ID_cliente,Correo_Cliente, contraseña, nombre_Cliente FROM clientes WHERE Correo_Cliente = '$correo'";
+    $sql = "SELECT ID_Cliente, Correo_Electronico, Contrasena, Nombre FROM clientes WHERE Correo_Cliente = '$correo' AND Contrasena = '$contrasena'";
     $result = $conexion->query($sql);
 
     if ($result === false) {
@@ -14,17 +13,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $contrasena_db = $row['contraseña'];
-        $nombre = $row["nombre_Cliente"];
+        $contrasena_db = $row['contrasena'];
+        $nombre = $row["Nombre"];
         $ID_cliente = $row["ID_cliente"];
         if ($contrasena == $contrasena_db) {
             $mensaje = "Inicio de sesión exitoso. ¡Bienvenido!";
             session_start();
             $_SESSION['Correo_Cliente'] = $correo;
-            $_SESSION['contraseña'] = $contrasena_db;
-            $_SESSION['nombre_Cliente'] = $nombre;
+            $_SESSION['Contrasena'] = $contrasena_db;
+            $_SESSION['Nombre'] = $nombre;
             $_SESSION['ID_cliente'] = $ID_cliente;
-            header('Location: FusionSabor.php');
+            header('Location: Menu.php');
             exit();
         } else {
             $mensaje = "Error en el inicio de sesión. Comprueba tus credenciales.";
@@ -38,7 +37,7 @@ $conexion->close();
 ?>
 
 <?php
-//Conección a la bse de datos
+
 include 'conex.inc.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -46,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST['nombre'];
     $contrasena = $_POST['contrasena'];
 
-    $sql = "INSERT INTO clientes (Correo_Cliente, nombre_Cliente, contraseña) VALUES ('$correo', '$nombre', '$contrasena')";
+    $sql = "INSERT INTO clientes (Correo_Electronico, Nombre, Contrasena) VALUES ('$correo', '$nombre', '$contrasena')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Datos insertados correctamente";
@@ -62,7 +61,7 @@ $conn->close();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Fusion Sabor</title>
+    <title>TecHome</title>
     <style>
         * {
             margin: 0;
@@ -225,7 +224,7 @@ $conn->close();
                 <input type="email" id="correo" name="correo" required> <!-- Agregamos el atributo 'name' para que los datos se envíen correctamente -->
             </div>
             <div class="InputBox">
-                <label for="contrasena">Contraseña:</label> <!-- Corregimos el id de la etiqueta 'input' -->
+                <label for="contrasena">contrasena:</label> <!-- Corregimos el id de la etiqueta 'input' -->
                 <input type="password" id="contrasena" name="contrasena" required> <!-- Agregamos el atributo 'name' para que los datos se envíen correctamente -->
             </div>
             <div class="Buttons">
@@ -249,12 +248,12 @@ $conn->close();
                 </div>
 
                 <div class="Box">
-                    <label for="contrasena">Contraseña:</label>
+                    <label for="contrasena">contrasena:</label>
                     <input type="password" id="contrasena" name="contrasena" required>
                 </div>
                 
                 <div class="Box">
-                    <label for="confirmar-contrasena">Confirmar Contraseña:</label>
+                    <label for="confirmar-contrasena">Confirmar contrasena:</label>
                     <input type="password" id="confirmar-contrasena" required>
                 </div>
 
@@ -264,13 +263,13 @@ $conn->close();
             </form>
         </div>
         <div class="reset-password">
-            <a href="#">¿Olvidaste tu contraseña?</a>
+            <a href="#">¿Olvidaste tu contrasena?</a>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         function RedirigirMenu() {
-            window.location.href = 'FusionSabor.php';
+            window.location.href = 'Menu.php';
         }
 
         function validarFormulario() {
@@ -278,7 +277,7 @@ $conn->close();
         var confirmarContrasena = document.getElementById("confirmar-contrasena").value;
 
         if (contrasena !== confirmarContrasena) {
-            alert("Las contraseñas no son iguales");
+            alert("Las contrasenas no son iguales");
             return false;
         }
         return true;
