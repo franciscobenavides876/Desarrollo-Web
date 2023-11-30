@@ -61,7 +61,7 @@ $conn->close();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TecHome</title>
+    <title>Fusion Sabor</title>
     <style>
         * {
             margin: 0;
@@ -224,7 +224,7 @@ $conn->close();
                 <input type="email" id="correo" name="correo" required> <!-- Agregamos el atributo 'name' para que los datos se envíen correctamente -->
             </div>
             <div class="InputBox">
-                <label for="contrasena">contrasena:</label> <!-- Corregimos el id de la etiqueta 'input' -->
+                <label for="contrasena">Contraseña:</label> <!-- Corregimos el id de la etiqueta 'input' -->
                 <input type="password" id="contrasena" name="contrasena" required> <!-- Agregamos el atributo 'name' para que los datos se envíen correctamente -->
             </div>
             <div class="Buttons">
@@ -248,12 +248,12 @@ $conn->close();
                 </div>
 
                 <div class="Box">
-                    <label for="contrasena">contrasena:</label>
+                    <label for="contrasena">Contraseña:</label>
                     <input type="password" id="contrasena" name="contrasena" required>
                 </div>
                 
                 <div class="Box">
-                    <label for="confirmar-contrasena">Confirmar contrasena:</label>
+                    <label for="confirmar-contrasena">Confirmar Contraseña:</label>
                     <input type="password" id="confirmar-contrasena" required>
                 </div>
 
@@ -263,13 +263,13 @@ $conn->close();
             </form>
         </div>
         <div class="reset-password">
-            <a href="#">¿Olvidaste tu contrasena?</a>
+            <a href="#">¿Olvidaste tu contraseña?</a>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         function RedirigirMenu() {
-            window.location.href = 'Menu.php';
+            window.location.href = 'FusionSabor.php';
         }
 
         function validarFormulario() {
@@ -277,7 +277,7 @@ $conn->close();
         var confirmarContrasena = document.getElementById("confirmar-contrasena").value;
 
         if (contrasena !== confirmarContrasena) {
-            alert("Las contrasenas no son iguales");
+            alert("Las contraseñas no son iguales");
             return false;
         }
         return true;
