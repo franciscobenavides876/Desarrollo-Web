@@ -1,15 +1,6 @@
 <?php
-$server = "localhost";
-$usuario = "root";
-$contraseña = "";
-$basededatos = "techome";
-
-$conexion = new mysqli($server, $usuario, $contraseña, $basededatos);
-$mensaje = "";
-
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
-}
+//Conección a la base de datos
+include 'conex.inc.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $correo = $_POST['correo'];
@@ -33,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['contraseña'] = $contrasena_db;
             $_SESSION['nombre_Cliente'] = $nombre;
             $_SESSION['ID_cliente'] = $ID_cliente;
-            header('Location: Menu.php');
+            header('Location: FusionSabor.php');
             exit();
         } else {
             $mensaje = "Error en el inicio de sesión. Comprueba tus credenciales.";
@@ -47,16 +38,8 @@ $conexion->close();
 ?>
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "techome";
-
-$conn = new mysqli($servername, $username, $password, $database);
-
-if ($conn->connect_error) {
-    die("La conexión falló: " . $conn->connect_error);
-}
+//Conección a la bse de datos
+include 'conex.inc.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correo = $_POST['correo'];
@@ -79,7 +62,7 @@ $conn->close();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TecHome</title>
+    <title>Fusion Sabor</title>
     <style>
         * {
             margin: 0;
@@ -287,7 +270,7 @@ $conn->close();
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         function RedirigirMenu() {
-            window.location.href = 'Menu.php';
+            window.location.href = 'FusionSabor.php';
         }
 
         function validarFormulario() {

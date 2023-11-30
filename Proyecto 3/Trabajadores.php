@@ -1,14 +1,6 @@
 <?php
-$host = "localhost";
-$usuario = "root";
-$contrasena = "";
-$base_datos = "fusionsabor";
-
-$conexion = new mysqli($host, $usuario, $contrasena, $base_datos);
-
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
-}
+// Conección a la base de datos
+include 'conex.inc.php';
 
 $consulta = "SELECT * FROM Trabajador";
 $resultado = $conexion->query($consulta);
